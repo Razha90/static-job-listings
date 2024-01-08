@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Static Job Listing](https://github.com/Razha90/static-job-listings)
+- Live Site URL: [Live Url](https://static-job-listings-ais.pages.dev/)
 
 ## My process
 
