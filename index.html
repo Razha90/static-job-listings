@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./src/style.css" />
+    <title>Frontend Mentor | Job Listings</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body,
+      div,
+      span,
+      applet,
+      object,
+      iframe,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      blockquote,
+      pre,
+      a,
+      abbr,
+      acronym,
+      address,
+      big,
+      cite,
+      code,
+      del,
+      dfn,
+      em,
+      img,
+      ins,
+      kbd,
+      q,
+      s,
+      samp,
+      small,
+      strike,
+      strong,
+      sub,
+      sup,
+      tt,
+      var,
+      b,
+      u,
+      i,
+      center,
+      dl,
+      dt,
+      dd,
+      ol,
+      ul,
+      li,
+      fieldset,
+      form,
+      label,
+      legend,
+      table,
+      caption,
+      tbody,
+      tfoot,
+      thead,
+      tr,
+      th,
+      td,
+      article,
+      aside,
+      canvas,
+      details,
+      embed,
+      figure,
+      figcaption,
+      footer,
+      header,
+      hgroup,
+      menu,
+      nav,
+      output,
+      ruby,
+      section,
+      summary,
+      time,
+      mark,
+      audio,
+      video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }
+      /* HTML5 display-role reset for older browsers */
+      article,
+      aside,
+      details,
+      figcaption,
+      figure,
+      footer,
+      header,
+      hgroup,
+      menu,
+      nav,
+      section {
+        display: block;
+      }
+      body {
+        line-height: 1;
+      }
+      ol,
+      ul {
+        list-style: none;
+      }
+      blockquote,
+      q {
+        quotes: none;
+      }
+      blockquote:before,
+      blockquote:after,
+      q:before,
+      q:after {
+        content: "";
+        content: none;
+      }
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+      html {
+        font-size: 16px;
+      }
+      body {
+        font-family: "League Spartan", sans-serif;
+      }
+      .attribution {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+
+      .green-light {
+        background-color: hsl(180, 52%, 96%);
+      }
+
+      header {
+        background-image: url("./images/bg-header-desktop.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 200px;
+      }
+      .green-dark {
+        background-color: hsl(180, 29%, 50%);
+      }
+
+      .fading-in {
+        animation: fadeIn 1.5s;
+      }
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .myClick {
+        cursor: pointer;
+        transition: 0.5s;
+      }
+
+      .myClick:hover {
+        opacity: 0.5;
+      }
+
+      .myClick:active {
+        cursor: wait;
+      }
+
+      .underlines {
+        color: hsl(180, 29%, 50%);
+        transition: 0.5s;
+        cursor: pointer;
+      }
+
+      .underlines:hover {
+        text-decoration: underline;
+      }
+
+      .underlines:active {
+        cursor: wait;
+      }
+
+      .borderes:hover {
+        border-left: 6px solid hsl(180, 29%, 50%);
+      }
+
+      .color-green {
+        color: hsl(180, 29%, 50%);
+      }
+
+      .dating * {
+        height: 15px;
+      }
+
+      .smaller {
+        cursor: pointer;
+      }
+      .smaller img {
+        transition: 0.5s;
+      }
+      .smaller:hover img {
+        transform: scale(0.8);
+      }
+
+      .spacing {
+        height: 270px;
+      }
+
+      .searching {
+        top: 100px; 
+        background-color: white;
+      }
+
+      header p {
+        font-size: 1.2em;
+        background-color: hsl(180, 31%, 95%);
+      }
+
+      @media (max-width: 575px) {
+        .images {
+          position: absolute;
+          top: -25px;
+        }
+
+        .images img {
+          width: 50px;
+          height: 50px;
+        }
+
+        .bordered {
+          height: 2px;
+          border-radius: 50%;
+          background-color: grey;
+          opacity: 0.5;
+          width: 100%;
+        }
+
+        .spacing {
+          height: 210px;
+        }
+
+        header {
+          height: 130px;
+          background-image: url("./images/bg-header-mobile.svg");
+        }
+
+        header p {
+          background-color: hsl(180, 31%, 95%);
+        }
+
+        header img {
+          width: 15px;
+          height: 15px;
+        }
+
+        .searching {
+          top: 50px;
+        }
+      }
+    </style>
+  </head>
+  <body class="green-light" style="height: 100vh">
+    <div id="app">
+      <header class="green-dark navbar fixed-top bg-body-tertiary">
+        <div
+          class="searching container-sm m-2 m-sm-auto rounded shadow position-relative fading-in p-2 p-sm-4 d-flex flex-row flex-nowrap gap-2"
+          v-if="role !== '' || level !== '' || languages.length > 0"
+        >
+          <div class="d-flex flex-row gap-3 flex-wrap">
+            <div v-if="role !== '' " class="d-flex flex-row align-items-center">
+              <p
+                class="p-2 rounded color-green fw-bold"
+              >
+                {{role}}
+              </p>
+              <div
+                class="green-dark p-2 d-flex align-items-center smaller"
+                style="width: 100%; height: 100%"
+                @click="role = ''"
+              >
+                <img
+                  src="./images/icon-remove.svg"
+                  alt="remove"
+                  loading="eager"
+                />
+              </div>
+            </div>
+            <div
+              v-if="level !== '' "
+              class="d-flex flex-row align-items-center"
+            >
+              <p
+                class="p-2 rounded color-green fw-bold"
+              >
+                {{level}}
+              </p>
+              <div
+                class="smaller green-dark p-2 d-flex align-items-center"
+                @click="level = ''"
+              >
+                <img
+                  src="./images/icon-remove.svg"
+                  alt="remove"
+                  loading="eager"
+                />
+              </div>
+            </div>
+            <template v-if="languages.length > 0">
+              <template v-for="language in languages">
+                <div class="d-flex flex-row align-items-center">
+                  <p
+                    class="p-2 rounded color-green fw-bold"
+                  >
+                    {{language}}
+                  </p>
+                  <div
+                    class="smaller green-dark p-2 d-flex align-items-center"
+                    @click="clearLanguage(language)"
+                  >
+                    <img
+                      src="./images/icon-remove.svg"
+                      alt="remove"
+                      loading="eager"
+                    />
+                  </div>
+                </div>
+              </template>
+            </template>
+          </div>
+          <div>
+            <p @click="clearFilter()" class="underlines">Clear</p>
+          </div>
+        </div>
+      </header>
+      <div class="spacing"></div>
+      <main class="container-md" style="min-height: 300px">
+        <div v-if="loading" class="fading-in d-flex flex-column gap-5 gap-sm-4">
+          <template v-if="filter.length > 0" v-for="data in filter">
+            <div
+              class="position-relative d-flex flex-sm-row justify-content-between p-4 shadow bg-body rounded align-items-sm-center borderes gap-4 flex-column"
+              style="
+                background-color: white;
+                box-shadow: 0px 0px 0px hsl(180, 8%, 52%);
+              "
+            >
+              <div class="d-flex flex-row gap-4">
+                <div class="d-flex align-items-center images">
+                  <img
+                    :src="data.logo"
+                    :alt="data.company"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="d-flex flex-column justify-content-between gap-3 gap-sm-1 mt-2 mt-sm-0">
+                  <div class="d-flex flex-row align-items-center gap-2">
+                    <p class="color-green">{{data.company}}</p>
+                    <p
+                      class="green-dark text-white p-2 pb-1 rounded-pill"
+                      v-if="data.new"
+                    >
+                      NEW!
+                    </p>
+                    <p
+                      class="bg-dark text-white p-2 pb-1 rounded-pill"
+                      v-if="data.featured"
+                    >
+                      FEATURED
+                    </p>
+                  </div>
+                  <div>
+                    <p class="color-green fs-4">{{data.position}}</p>
+                  </div>
+                  <div
+                    style="opacity: 0.5; min-width: 250px"
+                    class="d-flex flex-row fs-6 justify-content-between align-items-center dating"
+                  >
+                    <p class="text-dark">{{data.postedAt}}</p>
+                    <span
+                      class="rounded-circle bg-dark"
+                      style="width: 5px; height: 5px"
+                    ></span>
+                    <p class="text-dark">{{data.contract}}</p>
+                    <span
+                      class="bg-dark rounded-circle"
+                      style="width: 5px; height: 5px"
+                    ></span>
+                    <p class="text-dark">{{data.location}}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="bordered"></div>
+              <div class="d-flex flex-row align-items-center gap-3 flex-wrap">
+                <p
+                  class="p-2 rounded myClick color-green"
+                  style="background-color: hsl(180, 31%, 95%)"
+                  @click="roleClick(data.role)"
+                >
+                  {{data.role}}
+                </p>
+                <p
+                  class="p-2 rounded myClick color-green"
+                  style="background-color: hsl(180, 31%, 95%)"
+                  @click="levelClick(data.level)"
+                >
+                  {{data.level}}
+                </p>
+                <template v-for="language in data.languages">
+                  <p
+                    class="p-2 rounded myClick color-green"
+                    style="background-color: hsl(180, 31%, 95%)"
+                    @click="languagesClick(language)"
+                  >
+                    {{language}}
+                  </p>
+                </template>
+              </div>
+            </div>
+          </template>
+          <div v-else class="card">
+            <p>Gagal</p>
+          </div>
+        </div>
+        <div
+          v-else
+          class="d-flex justify-content-center align-items-center mt-5"
+          style="height: 100%"
+        >
+          <div
+            class="spinner-border text-info"
+            style="width: 70px; height: 70px"
+            role="status"
+          >
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div class="attribution">
+          Challenge by 
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            > Frontend Mentor</a
+          >. Coded by <a href="https://www.instagram.com/razhajs/">Razha Jamsik Syah</a>.
+        </div>
+      </div>
+      </footer>
+  </body>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+  <script src="./src/script.js"></script>
+</html>
